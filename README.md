@@ -24,7 +24,7 @@ java Main
 ```
 Any question please contact me: grafgonzalo@gmail.com
 
-<img width="314" alt="app-screenshot" src="https://github.com/user-attachments/assets/3da93820-e3ba-45b0-b5d6-089a0fee7da9">
-<img width="314" alt="app-screenshot" src="https://github.com/user-attachments/assets/3e0a9990-ab2a-4912-882b-c3e9b4c982be">
-<img width="314" alt="app-screenshot" src="https://github.com/user-attachments/assets/a49d5657-0f86-4d2b-abee-7a86572572ce">
+<img width="314" alt="app-screenshot" src="https://github.com/user-attachments/assets/e4abcde9-121b-425e-9c1e-05420670c72e">
+<img width="314" alt="app-screenshot" src="https://github.com/user-attachments/assets/3709d636-3d18-4131-b86f-a9d214db4281">
+<img width="314" alt="app-screenshot" src="https://github.com/user-attachments/assets/75ab725c-d5f5-4917-9ab3-ca80e690f3ac">
 
