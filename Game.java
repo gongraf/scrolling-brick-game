@@ -157,9 +157,6 @@ class Game extends JPanel implements ActionListener,Commons {
     @Override
     public void actionPerformed(ActionEvent e){
 
-        /*****************
-         * THE GAME LOOP
-         ****************/
         switch(this.state) {
             case INTRO:
                 blinkEnter();
