@@ -22,8 +22,7 @@ import javax.swing.ImageIcon;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 
-class Brick
-{
+class Brick {
 
     private int w, h, x, y;
     private boolean active;
@@ -35,7 +34,6 @@ class Brick
         this.active = false;
         ImageIcon iid = new ImageIcon(options[(int) Math.floor(Math.random() *4)]);
         this.w = iid.getIconWidth();
-            
         this.h = iid.getIconHeight();
         this.image = iid.getImage();
     }
@@ -43,13 +41,9 @@ class Brick
 	//Overload for special bricks
     Brick (String resource) {
         String dir = "images/";
-
         this.active = false;
-
         ImageIcon iid = new ImageIcon(dir+resource);
-                
         this.w = iid.getIconWidth();
-                
         this.h = iid.getIconHeight();
         this.image = iid.getImage();
     }
@@ -72,7 +66,5 @@ class Brick
 
     int getH() { return this.h; }
 
-    
     void doEntity () { /*Do nothing... you know... just being bricks */ }
-
 }

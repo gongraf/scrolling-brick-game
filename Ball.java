@@ -22,11 +22,9 @@ import javax.swing.ImageIcon;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 
-class Ball implements Commons 
-{
+class Ball implements Commons {
 
     private static final String IMG_SRC = "images/ball.png";
-        
     private int w = TILE_SIZE; 
     private int h = TILE_SIZE;
     private double x,y;
@@ -43,19 +41,12 @@ class Ball implements Commons
         
     int resets, hits;
 
-       
     Ball() {
-
         this.image = this.iid.getImage();
-                
         this.resets = 3;
-                
         this.active = true;
-                
         this.launched = false;
-                 
     }
-
 
     void setX (double x) { this.x = x; }
 
@@ -129,47 +120,38 @@ class Ball implements Commons
             this.x += this.dirX;
         		        
             centerEntityOnMap(map);
-        		            		                		          
         }
         
         else if(!this.launched) {
-        		
             showTable(map);
-        		     
             this.x = (int)player.getX()+player.getW()/2 - this.w/2;
             this.y = (int)player.getY()-this.h;
-        }  
-        				              
+        }
     }
 
 	void showTable(LevelMap map) {
 		
-        if (map.startY < 0){ 
-                
+        if (map.startY < 0){
             map.startY = 0;
-            this.mappingSpeed *= -1; 
-                
+            this.mappingSpeed *= -1;
         }
 
-        else if ( map.startY + SCREEN_HEIGHT >= map.MAX_MAP_Y ) { 
-                
+        else if ( map.startY + SCREEN_HEIGHT >= map.MAX_MAP_Y ) {
             map.startY = map.MAX_MAP_Y - SCREEN_HEIGHT;
             this.mappingSpeed *= -1;
-        	
         }
-        		
-        map.startY += this.mappingSpeed;	
 
+        map.startY += this.mappingSpeed;
 	}
 
 	void centerEntityOnMap(LevelMap map) {
-		
+
 		map.startX = (int)this.x - (SCREEN_WIDTH / 2);
-       
+
         if (map.startX < 0){ 
             map.startX = 0;
         }
-        
+
         else if (map.startX + SCREEN_WIDTH >= map.MAX_MAP_X){
             map.startX = map.MAX_MAP_X - SCREEN_WIDTH;
         }
@@ -183,7 +165,6 @@ class Ball implements Commons
         else if ( map.startY + SCREEN_HEIGHT >= map.MAX_MAP_Y ) { 
             map.startY = map.MAX_MAP_Y - SCREEN_HEIGHT;
         }
-		
 	}
 
     void setLaunchDir(){
@@ -191,6 +172,5 @@ class Ball implements Commons
         this.dirX = Math.cos(dir) * this.speed;
         this.dirY = Math.sin(dir) * this.speed;
         this.hits = 0;
-    }    
-        
+    }
 }
