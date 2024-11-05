@@ -18,17 +18,15 @@ along with this program; if not, write to the Free Software
 Foundation, 51 Franklin Street, Suite 500, Boston, MA 02110-1335, USA.
 */
 
-class SpecialBrick extends Brick
-{
+class SpecialBrick extends Brick {
 	
     private int hits = 2;
 
-	SpecialBrick(String res) {
-		super(res);
-	}
+    SpecialBrick(String res) {
+        super(res);
+    }
 
-	void setHits() { this.hits -= 1; }
+    void setHits() { this.hits -= 1; }
 	
-	int getHits() { return this.hits; }
-
+    int getHits() { return this.hits; }
 }
