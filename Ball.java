@@ -90,38 +90,37 @@ class Ball implements Commons {
         if(this.launched) {
         		  
             if(this.x + this.w >= SCREEN_WIDTH ) {
-        		this.x = SCREEN_WIDTH - this.w;
-        		this.dirX *=  -1;
+        	this.x = SCREEN_WIDTH - this.w;
+        	this.dirX *=  -1;
             }
         		        
-        	if(this.x < 0 ) {
-        		this.x = 0;
-        		this.dirX *=  -1;
+            if(this.x < 0 ) {
+        	this.x = 0;
+        	this.dirX *=  -1;
             }
         		        
-        	if(this.y <= 0) this.dirY = -this.dirY;
+            if(this.y <= 0) this.dirY = -this.dirY;
         		       
-        	if(this.y + this.h > map.MAX_MAP_Y) {
+            if(this.y + this.h > map.MAX_MAP_Y) {
         		        
-        		this.active = false;
+        	this.active = false;
         		    
-        		if(--this.thinkTime == 0) {
+        	if(--this.thinkTime == 0) {
         		                
-        		    this.dirX = 0;
-        		    this.dirY = 0;
-        		    this.launched = false;
-        		    this.resets -= 1;
-        		    this.thinkTime = MAX_RELOAD;
+        	    this.dirX = 0;
+        	    this.dirY = 0;
+        	    this.launched = false;
+        	    this.resets -= 1;
+        	    this.thinkTime = MAX_RELOAD;
                                       		                
-        		}
+        	}
             }
         		       
-        	this.y += this.dirY;
+            this.y += this.dirY;
             this.x += this.dirX;
         		        
             centerEntityOnMap(map);
         }
-        
         else if(!this.launched) {
             showTable(map);
             this.x = (int)player.getX()+player.getW()/2 - this.w/2;
@@ -129,29 +128,27 @@ class Ball implements Commons {
         }
     }
 
-	void showTable(LevelMap map) {
+    void showTable(LevelMap map) {
 		
         if (map.startY < 0){
             map.startY = 0;
             this.mappingSpeed *= -1;
         }
-
         else if ( map.startY + SCREEN_HEIGHT >= map.MAX_MAP_Y ) {
             map.startY = map.MAX_MAP_Y - SCREEN_HEIGHT;
             this.mappingSpeed *= -1;
         }
 
         map.startY += this.mappingSpeed;
-	}
+    }
 
-	void centerEntityOnMap(LevelMap map) {
+    void centerEntityOnMap(LevelMap map) {
 
-		map.startX = (int)this.x - (SCREEN_WIDTH / 2);
+	map.startX = (int)this.x - (SCREEN_WIDTH / 2);
 
         if (map.startX < 0){ 
             map.startX = 0;
         }
-
         else if (map.startX + SCREEN_WIDTH >= map.MAX_MAP_X){
             map.startX = map.MAX_MAP_X - SCREEN_WIDTH;
         }
@@ -161,11 +158,10 @@ class Ball implements Commons {
         if (map.startY < 0){ 
             map.startY = 0;
         }
-
         else if ( map.startY + SCREEN_HEIGHT >= map.MAX_MAP_Y ) { 
             map.startY = map.MAX_MAP_Y - SCREEN_HEIGHT;
         }
-	}
+    }
 
     void setLaunchDir(){
         this.dir =  1; 
